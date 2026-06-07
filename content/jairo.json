@@ -1,0 +1,48 @@
+{
+  "profile": {
+    "avatar": null,
+    "name": "Jairo Jessé",
+    "bio": "sou uma mente criativa e que gosta de criar, no digital, manual e no rural.",
+    "showAvatar": true,
+    "showBio": true
+  },
+  "highlights": [
+    {
+      "id": 1,
+      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=900&q=80",
+      "link": "#",
+      "active": true
+    }
+  ],
+  "socials": [
+    { "id": 1, "icon": "YouTube",   "label": "YouTube",   "link": "#", "active": true },
+    { "id": 2, "icon": "Instagram", "label": "Instagram", "link": "#", "active": true },
+    { "id": 3, "icon": "Behance",   "label": "Behance",   "link": "#", "active": true },
+    { "id": 4, "icon": "LinkedIn",  "label": "LinkedIn",  "link": "#", "active": true }
+  ],
+  "recommendations": [
+    { "id": 1, "image": null, "title": "Figma",  "link": "#", "size": "half", "active": true },
+    { "id": 2, "image": null, "title": "Notion", "link": "#", "size": "half", "active": true },
+    {
+      "id": 3,
+      "image": "https://images.unsplash.com/photo-1636622433525-127afdf3662d?w=900&q=80",
+      "title": "Curso de Design",
+      "link": "#",
+      "size": "full",
+      "active": true
+    },
+    {
+      "id": 4,
+      "image": "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=900&q=80",
+      "title": "Design Systems",
+      "link": "#",
+      "size": "full",
+      "active": true
+    }
+  ],
+  "sections": {
+    "highlights":      { "active": true, "showTitle": false, "title": "" },
+    "socials":         { "active": true, "showTitle": true,  "title": "Redes" },
+    "recommendations": { "active": true, "showTitle": true,  "title": "Minhas recomendações" }
+  }
+}
