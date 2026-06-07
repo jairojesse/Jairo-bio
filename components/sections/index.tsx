@@ -10,13 +10,13 @@ import type { Profile as ProfileData, Social, Recommendation } from "@/lib/types
 export function SquircleAvatar({
   src,
   t,
-  size = 80,
+  size = 96,
 }: {
   src: string | null;
   t: TokenSet;
   size?: number;
 }) {
-  const { ref, svgClip, clipStyle } = useSquircle({ radius: 22 });
+  const { ref, svgClip, clipStyle } = useSquircle({ radius: 24 });
   return (
     <div
       ref={ref as React.RefObject<HTMLDivElement>}
@@ -36,18 +36,17 @@ export function SquircleAvatar({
 
 export function Profile({ data, t }: { data: ProfileData; t: TokenSet }) {
   return (
-    <header style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-      {data.showAvatar && <SquircleAvatar src={data.avatar} t={t} size={82} />}
-      <div style={{ display: "flex", flexDirection: "column", gap: 7 }}>
+    <header style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+      {data.showAvatar && <SquircleAvatar src={data.avatar} t={t} size={96} />}
+      <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
         <h1
           style={{
             margin: 0,
-            fontSize: 26,
-            fontWeight: 400,
-            fontStyle: "italic",
-            fontFamily: "'Instrument Serif', Georgia, serif",
+            fontSize: 30,
+            fontWeight: 700,
+            fontFamily: "'Bricolage Grotesque', Georgia, serif",
             color: t.textPrimary,
-            letterSpacing: "-0.02em",
+            letterSpacing: "-0.03em",
             lineHeight: 1.15,
           }}
         >
@@ -57,10 +56,10 @@ export function Profile({ data, t }: { data: ProfileData; t: TokenSet }) {
           <p
             style={{
               margin: 0,
-              fontSize: 14,
-              fontFamily: "'DM Sans', system-ui, sans-serif",
+              fontSize: 16,
+              fontFamily: "'Inter', system-ui, sans-serif",
               color: t.textSecondary,
-              lineHeight: 1.65,
+              lineHeight: 1.8,
               fontWeight: 400,
               maxWidth: 340,
             }}
@@ -85,16 +84,17 @@ export function Section({
   t: TokenSet;
 }) {
   return (
-    <section style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+    <section style={{ display: "flex", flexDirection: "column", gap: 14 }}>
       {showTitle && title && (
         <h2
           style={{
             margin: 0,
-            fontSize: 15,
+            fontSize: 13,
             fontWeight: 600,
-            fontFamily: "'DM Sans', system-ui, sans-serif",
-            letterSpacing: "-0.01em",
-            color: t.textPrimary,
+            fontFamily: "'Inter', system-ui, sans-serif",
+            letterSpacing: "0.06em",
+            textTransform: "uppercase" as const,
+            color: t.textMuted,
           }}
         >
           {title}
@@ -111,7 +111,7 @@ export function Grid({ children }: { children: React.ReactNode }) {
       style={{
         display: "grid",
         gridTemplateColumns: "1fr 1fr",
-        gap: 10,
+        gap: 12,
       }}
     >
       {children}
@@ -146,7 +146,7 @@ export function RecommendationsScroll({
   }, [cardFullH, fulls.length]);
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
       {halves.length > 0 && (
         <Grid>
           {halves.map((r) => (
@@ -170,7 +170,7 @@ export function RecommendationsScroll({
             style={{
               display: "flex",
               flexDirection: "column",
-              gap: 10,
+              gap: 12,
               maxHeight: scrollMaxH,
               overflowY: "auto",
               scrollSnapType: "y mandatory",
@@ -215,7 +215,7 @@ export function RecommendationsScroll({
               style={{
                 display: "flex",
                 justifyContent: "center",
-                paddingTop: 7,
+                paddingTop: 8,
                 gap: 4,
               }}
             >
@@ -263,7 +263,7 @@ export function ContactBar({
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        gap: 20,
+        gap: 24,
         paddingTop: 8,
       }}
     >
@@ -311,8 +311,8 @@ export function ThemeToggle({
       onMouseLeave={() => setHovered(false)}
       aria-label={`Tema atual: ${theme === "light" ? "claro" : "escuro"}`}
       style={{
-        width: 34,
-        height: 34,
+        width: 36,
+        height: 36,
         borderRadius: "50%",
         border: `1px solid ${t.borderSubtle}`,
         background: hovered ? t.bgCardHover : t.bgCard,
@@ -328,15 +328,8 @@ export function ThemeToggle({
       }}
     >
       {theme === "light" ? (
-        <svg
-          width="14"
-          height="14"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke={t.textSecondary}
-          strokeWidth="2"
-          strokeLinecap="round"
-        >
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+          stroke={t.textSecondary} strokeWidth="2" strokeLinecap="round">
           <circle cx="12" cy="12" r="5" />
           <line x1="12" y1="1" x2="12" y2="3" />
           <line x1="12" y1="21" x2="12" y2="23" />
@@ -348,15 +341,8 @@ export function ThemeToggle({
           <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
         </svg>
       ) : (
-        <svg
-          width="14"
-          height="14"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke={t.textSecondary}
-          strokeWidth="2"
-          strokeLinecap="round"
-        >
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+          stroke={t.textSecondary} strokeWidth="2" strokeLinecap="round">
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
         </svg>
       )}
