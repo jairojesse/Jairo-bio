@@ -64,8 +64,13 @@ export function Card({
   const [imgLoaded, setImgLoaded] = useState(!image);
   const radius = variant === "highlight" ? 26 : 22;
   const { ref, svgClip, clipStyle } = useSquircle({ radius });
+
   const aspectRatio =
-    variant === "highlight" || size === "full" ? "8 / 3" : "5 / 4";
+    variant === "highlight"
+      ? "16 / 9"
+      : size === "full"
+      ? "8 / 3"
+      : "5 / 4";
 
   useEffect(() => {
     if (!image) return;
@@ -169,7 +174,7 @@ export function Card({
               fontSize: 12,
               fontWeight: 600,
               color: t.textPrimary,
-              fontFamily: "'DM Sans', system-ui, sans-serif",
+              fontFamily: "'Inter', system-ui, sans-serif",
               lineHeight: 1.2,
             }}
           >
@@ -204,7 +209,7 @@ export function Card({
               fontSize: 12,
               fontWeight: 600,
               color: t.textPrimary,
-              fontFamily: "'DM Sans', system-ui, sans-serif",
+              fontFamily: "'Inter', system-ui, sans-serif",
               lineHeight: 1.3,
             }}
           >
@@ -230,7 +235,7 @@ export function Card({
               fontSize: 12,
               fontWeight: 600,
               color: "#fff",
-              fontFamily: "'DM Sans', system-ui, sans-serif",
+              fontFamily: "'Inter', system-ui, sans-serif",
             }}
           >
             {label}
@@ -252,7 +257,7 @@ export function Card({
             style={{
               fontSize: 11,
               color: t.textMuted,
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'Inter', sans-serif",
               letterSpacing: "0.04em",
             }}
           >
