@@ -114,6 +114,7 @@ export function BioPage({ content }: BioPageProps) {
             showTitle={sections.recommendations.showTitle}
             title={sections.recommendations.title}
             t={t}
+            style={{ marginTop: -20 }}
           >
             <RecommendationsScroll
               items={recommendations}
