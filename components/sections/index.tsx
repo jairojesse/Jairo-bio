@@ -77,14 +77,16 @@ export function Section({
   showTitle = true,
   children,
   t,
+  style,
 }: {
   title?: string;
   showTitle?: boolean;
   children: React.ReactNode;
   t: TokenSet;
+  style?: React.CSSProperties;
 }) {
   return (
-    <section style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+    <section style={{ display: "flex", flexDirection: "column", gap: 14, ...style }}>
       {showTitle && title && (
         <h2
           style={{
@@ -104,6 +106,7 @@ export function Section({
     </section>
   );
 }
+
 
 export function Grid({ children }: { children: React.ReactNode }) {
   return (
