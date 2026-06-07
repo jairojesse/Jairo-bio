@@ -20,7 +20,7 @@ interface BioPageProps {
 export function BioPage({ content }: BioPageProps) {
   const [theme, setTheme] = useState<"light" | "dark">("light");
   const pageRef = useRef<HTMLDivElement>(null);
-  const [pageW, setPageW] = useState(436);
+  const [pageW, setPageW] = useState(520);
   const t = TOKENS[theme];
   const { profile, highlights, socials, recommendations, sections } = content;
 
@@ -45,12 +45,12 @@ export function BioPage({ content }: BioPageProps) {
       <div
         ref={pageRef}
         style={{
-          maxWidth: 480,
+          maxWidth: 520,
           margin: "0 auto",
-          padding: "40px 22px 72px",
+          padding: "48px 36px 80px",
           display: "flex",
           flexDirection: "column",
-          gap: 34,
+          gap: 48,
         }}
       >
         <div
@@ -118,7 +118,7 @@ export function BioPage({ content }: BioPageProps) {
             <RecommendationsScroll
               items={recommendations}
               t={t}
-              sectionWidth={pageW - 44}
+              sectionWidth={pageW - 72}
             />
           </Section>
         )}
@@ -130,7 +130,9 @@ export function BioPage({ content }: BioPageProps) {
             textAlign: "center",
             fontSize: 11,
             color: t.textMuted,
-            letterSpacing: "0.04em",
+            letterSpacing: "0.06em",
+            textTransform: "uppercase",
+            fontFamily: "'Inter', system-ui, sans-serif",
           }}
         >
           jairo.bio
